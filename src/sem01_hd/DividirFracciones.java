@@ -40,7 +40,8 @@ public class DividirFracciones extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de División de Fracciones");
-        setBackground(new java.awt.Color(204, 0, 51));
+        setBackground(new java.awt.Color(204, 26, 30));
+        setForeground(java.awt.Color.red);
 
         jLabel1.setText("Dividendo:");
 
