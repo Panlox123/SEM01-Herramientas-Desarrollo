@@ -34,6 +34,9 @@ public class DividirFracciones extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jresultado = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jhistorial = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de División de Fracciones");
@@ -63,31 +66,44 @@ public class DividirFracciones extends javax.swing.JFrame {
         jresultado.setRows(5);
         jScrollPane1.setViewportView(jresultado);
 
+        jLabel4.setText("Historial:");
+
+        jhistorial.setColumns(20);
+        jhistorial.setRows(5);
+        jScrollPane2.setViewportView(jhistorial);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jdividendo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jdivisor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDividir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(31, 31, 31))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jdividendo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jdivisor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnDividir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(31, 31, 31))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(15, Short.MAX_VALUE))))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +123,14 @@ public class DividirFracciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(41, 41, 41))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
@@ -115,32 +138,44 @@ public class DividirFracciones extends javax.swing.JFrame {
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
         try {
-        // Obtener los valores ingresados en los JTextField
-        int dividendo = Integer.parseInt(jdividendo.getText());
-        int divisor = Integer.parseInt(jdivisor.getText());
+            // Obtener los valores ingresados en los JTextField y eliminar espacios en blanco
+            String dividendoStr = jdividendo.getText().trim();
+            String divisorStr = jdivisor.getText().trim();
 
-        // Validar que sean positivos
-        if (dividendo <= 0 || divisor <= 0) {
-            JOptionPane.showMessageDialog(this, "Ingrese solo números enteros positivos...!!!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+            // Validar que los campos no estén vacíos
+            if (dividendoStr.isEmpty() || divisorStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Los campos no pueden estar vacíos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            int dividendo = Integer.parseInt(dividendoStr);
+            int divisor = Integer.parseInt(divisorStr);
+
+            // Validaciones
+            if (dividendo <= 0 || divisor <= 0) {
+                JOptionPane.showMessageDialog(this, "Ingrese solo números enteros positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (divisor == 0) {
+                JOptionPane.showMessageDialog(this, "El divisor no puede ser cero.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Realizar la división
+            int resultado = dividendo / divisor;
+            int residuo = dividendo % divisor;
+
+            // Mostrar el resultado en el JTextArea de resultado
+            jresultado.setText("📌 Resultado de la división:\nCociente: " + resultado + "\nResiduo: " + residuo);
+
+            // Agregar al historial (concatenando con lo anterior)
+            String nuevaOperacion = "División: " + dividendo + " / " + divisor + " = " + resultado + " (Residuo: " + residuo + ")\n";
+            jhistorial.append(nuevaOperacion); // Agregar nueva línea al historial
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error: Ingrese solo números enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        // Verificar que el divisor no sea cero
-        if (divisor == 0) {
-            JOptionPane.showMessageDialog(this, "El divisor no puede ser cero...!!!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Realizar la división
-        int resultado = dividendo / divisor;
-        int residuo = dividendo % divisor;
-
-        // Mostrar el resultado en el campo de texto
-        jresultado.setText("Cociente: " + resultado + " | Residuo: " + residuo);
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Entrada no válida. Ingrese solo números enteros.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -191,9 +226,12 @@ public class DividirFracciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jdividendo;
     private javax.swing.JTextField jdivisor;
+    private javax.swing.JTextArea jhistorial;
     private javax.swing.JTextArea jresultado;
     // End of variables declaration//GEN-END:variables
 }
