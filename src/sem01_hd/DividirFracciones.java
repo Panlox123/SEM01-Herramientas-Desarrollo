@@ -37,6 +37,7 @@ public class DividirFracciones extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jhistorial = new javax.swing.JTextArea();
+        jlimpiarhistorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de División de Fracciones");
@@ -73,6 +74,13 @@ public class DividirFracciones extends javax.swing.JFrame {
         jhistorial.setRows(5);
         jScrollPane2.setViewportView(jhistorial);
 
+        jlimpiarhistorial.setText("Limpiar historial");
+        jlimpiarhistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jlimpiarhistorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,6 +113,10 @@ public class DividirFracciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlimpiarhistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,6 +143,8 @@ public class DividirFracciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jlimpiarhistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -186,6 +200,10 @@ public class DividirFracciones extends javax.swing.JFrame {
         jdividendo.requestFocus();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void jlimpiarhistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlimpiarhistorialActionPerformed
+        jhistorial.setText("");
+    }//GEN-LAST:event_jlimpiarhistorialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,6 +251,7 @@ public class DividirFracciones extends javax.swing.JFrame {
     private javax.swing.JTextField jdividendo;
     private javax.swing.JTextField jdivisor;
     private javax.swing.JTextArea jhistorial;
+    private javax.swing.JButton jlimpiarhistorial;
     private javax.swing.JTextArea jresultado;
     // End of variables declaration//GEN-END:variables
 }
