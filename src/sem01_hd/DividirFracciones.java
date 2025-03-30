@@ -51,6 +51,11 @@ public class DividirFracciones extends javax.swing.JFrame {
         });
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Resultado:");
 
@@ -137,6 +142,13 @@ public class DividirFracciones extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Entrada no válida. Ingrese solo números enteros.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btnDividirActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        jdividendo.setText("");
+        jdivisor.setText("");
+        jresultado.setText(""); 
+        jdividendo.requestFocus();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
